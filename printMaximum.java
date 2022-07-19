@@ -1,39 +1,30 @@
 package Thirteen;
 
-import java.util.Arrays;
-
 public class printMaximum 
 {
-	static double maxdouble;
-	
-	public static void maximum(double my_array[]) 
+	public static void toPrint(Double[] inputArray)
 	{
-		maxdouble = my_array[0];
-		int len = my_array.length;
-		for (int i = 1; i < len - 1; i = i + 2) 
+		for(double element  : inputArray)
 		{
-			if (i + 1 > len) 
-			{
-				if (my_array[i] > maxdouble) maxdouble = my_array[i];
-			}
-			if (my_array[i] > my_array[i + 1]) 
-			{
-				if (my_array[i] > maxdouble) maxdouble = my_array[i];
-			}
-			if (my_array[i] < my_array[i + 1]) 
-			{
-				if (my_array[i + 1] > maxdouble) maxdouble = my_array[i + 1];
-			}
+			System.out.printf("%s\t", element);
 		}
+		System.out.println();
 	}
-	
-	
 
-	public static void main(String[] args) 
-	{
-		double[] my_array = {1.5, 5.4, 12.3};
-		maximum(my_array);
-		System.out.println(" Original Array: "+Arrays.toString(my_array));
-		System.out.println(" Maximum value for the above array = " + maxdouble);
-	}
-}
+
+	public static void main(String[] args)
+	{  
+
+
+		Double [] intArray = {25.2, 11.6, 7.5};  
+		double max = intArray[0];  
+		for (int i = 0; i < intArray.length; i++) 
+		{  
+			//Compare elements of array with max  
+			if(intArray[i] > max)  
+				max = intArray[i];  
+		}  
+		printMaximum.toPrint(intArray);
+		System.out.println("Maximum element present in given array: " + max);  
+	}  
+}  
